@@ -49,5 +49,11 @@
 <script src="script.js"></script>
 
 </body>
+  <script>
+  if (!localStorage.getItem("currentUser")) {
+    window.location.replace("login.html");
+  }
+</script>
 
 </html>
+
