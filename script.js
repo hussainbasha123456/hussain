@@ -1,51 +1,106 @@
 /***********************
  * DATA
  ***********************/
-const schools = [
-  {
-    id: "psbb_tnagar",
-    name: "PSBB Senior Secondary School",
-    area: "T Nagar",
-    fees: "₹45,000 – ₹70,000",
-    lat: 13.0418,
-    lng: 80.2337
-  },
-  {
-    id: "dav_boys_gopalapuram",
-    name: "DAV Boys Senior Secondary School",
-    area: "Gopalapuram",
-    fees: "₹40,000 – ₹65,000",
-    lat: 13.0476,
-    lng: 80.2587
-  },
-  {
-    id: "dav_girls_gopalapuram",
-    name: "DAV Girls Senior Secondary School",
-    area: "Gopalapuram",
-    fees: "₹38,000 – ₹60,000",
-    lat: 13.0469,
-    lng: 80.2581
-  }
-];
 
-const colleges = [
-  {
-    id: "saveetha_thandalam",
-    name: "Saveetha Engineering College",
-    area: "Thandalam",
-    fees: "₹1,00,000 – ₹2,00,000",
-    lat: 13.0219,
-    lng: 80.0215
+
+
+const DATA = {
+  schools: {
+    psbb_tnagar: {
+      id: "psbb_tnagar",
+      name: "PSBB Senior Secondary School",
+      area: "T Nagar, Chennai",
+      about: "A reputed CBSE school known for academic excellence and discipline.",
+      fees: "₹45,000 – ₹70,000",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      lat: 13.0418,
+      lng: 80.2337
+    },
+    dav_boys_gopalapuram: {
+      id: "dav_boys_gopalapuram",
+      name: "DAV Boys Senior Secondary School",
+      area: "Gopalapuram, Chennai",
+      about: "One of the oldest DAV institutions with strong academic results.",
+      fees: "₹40,000 – ₹65,000",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      lat: 13.0476,
+      lng: 80.2587
+    },
+    dav_girls_gopalapuram: {
+      id: "dav_girls_gopalapuram",
+      name: "DAV Girls Senior Secondary School",
+      area: "Gopalapuram, Chennai",
+      about: "Well-known CBSE school focused on holistic development.",
+      fees: "₹38,000 – ₹60,000",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      lat: 13.0469,
+      lng: 80.2581
+    },
+    chettinad_vidyashram: {
+      id: "chettinad_vidyashram",
+      name: "Chettinad Vidyashram",
+      area: "RA Puram, Chennai",
+      about: "Premium CBSE school with international exposure.",
+      fees: "₹90,000 – ₹1,20,000",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      lat: 13.0213,
+      lng: 80.2609
+    },
+    st_bedes: {
+      id: "st_bedes",
+      name: "St. Bede’s Anglo Indian School",
+      area: "Mylapore, Chennai",
+      about: "Historic Anglo-Indian school with strong alumni network.",
+      fees: "₹55,000 – ₹80,000",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      lat: 13.0337,
+      lng: 80.2691
+    }
   },
-  {
-    id: "ssn_kalavakkam",
-    name: "SSN College of Engineering",
-    area: "Kalavakkam",
-    fees: "₹1,50,000 – ₹2,50,000",
-    lat: 12.7904,
-    lng: 80.2153
+
+  colleges: {
+    iit_madras: {
+      id: "iit_madras",
+      name: "IIT Madras",
+      area: "Adyar, Chennai",
+      about: "Top engineering institute in India with global reputation.",
+      fees: "₹25,000 – ₹2,00,000",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      lat: 12.9915,
+      lng: 80.2336
+    },
+    anna_university: {
+      id: "anna_university",
+      name: "Anna University",
+      area: "Guindy, Chennai",
+      about: "State technical university offering engineering and science programs.",
+      fees: "₹40,000 – ₹1,50,000",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      lat: 13.0108,
+      lng: 80.2355
+    },
+    veltech: {
+      id: "veltech",
+      name: "Vel Tech Rangarajan Dr. Sagunthala R&D Institute",
+      area: "Avadi, Chennai",
+      about: "Private deemed university known for engineering and research.",
+      fees: "₹1,20,000 – ₹2,50,000",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      lat: 13.1643,
+      lng: 80.0675
+    },
+    loyola_college: {
+      id: "loyola_college",
+      name: "Loyola College",
+      area: "Nungambakkam, Chennai",
+      about: "Autonomous college famous for arts, science, and commerce.",
+      fees: "₹20,000 – ₹60,000",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      lat: 13.0646,
+      lng: 80.2337
+    }
   }
-];
+};
 // ===== LOAD USER-ADDED DATA =====
 const userSchools = JSON.parse(localStorage.getItem("user_schools")) || [];
 const userColleges = JSON.parse(localStorage.getItem("user_colleges")) || [];
@@ -178,4 +233,5 @@ document.getElementById("collegesBtn").onclick = () => {
  ***********************/
 renderList(schools);
 localStorage.setItem("all_schools", JSON.stringify(schools));
+
 localStorage.setItem("all_colleges", JSON.stringify(colleges));
