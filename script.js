@@ -235,3 +235,4 @@ renderList(schools);
 localStorage.setItem("all_schools", JSON.stringify(schools));
 
 localStorage.setItem("all_colleges", JSON.stringify(colleges));
+
